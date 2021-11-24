@@ -31,7 +31,7 @@ class Score(models.Model):
     category = models.ForeignKey(Category, verbose_name = _('Category'),default=1, max_length=200, on_delete=CASCADE, blank=False, null=False)
     comments = models.TextField(_('Comment'),blank= False, null=False, default='Helping people to pray')
     publication_date = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(default=datetime.now())
+    created = models.DateTimeField(default=timezone.now)
 
 
     class Meta:
@@ -45,7 +45,7 @@ class Score(models.Model):
 
 class Status(models.Model):
     name = models.CharField(_('Status'), max_length=250, default='PENDING')
-    created = models.DateTimeField(_('Created'), auto_now_add=datetime.now())
+    created = models.DateTimeField(_('Created'), auto_now_add= True)
 
 class Advert(models.Model):
     
@@ -54,7 +54,7 @@ class Advert(models.Model):
     short_description = models.TextField(_('Short Description'), blank=True, null=True)
     link = models.CharField(_('Link'), blank=True, null=True, max_length=250)
     status = models.ForeignKey(_('Status'), blank=False, null=False, on_delete=CASCADE)
-    created = models.DateTimeField(_('Create'), auto_now_add=datetime.now())
+    created = models.DateTimeField(_('Create'), auto_now_add=timezone.now)
 
     class Meta:
         verbose_name = _('Advert')
