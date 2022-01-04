@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$#pi^l^d@$hzlk!4ldvj^dbxn(8u*3@o4ig!!9hf%62y!+^n^%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #Installed apps
+    'crispy_forms',
     #Added apps
     'scores',
     'musician',
@@ -87,6 +89,7 @@ DATABASES = {
         'PASSWORD': 'tossen250',
         'HOST': 'localhost',
         'PORT': '5432',
+        
     }
 }
 

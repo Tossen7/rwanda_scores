@@ -9,3 +9,8 @@ def index_view(request):
 
     dataset['category'] = category
     return render(request, 'index.html', dataset)
+
+def add_score(request):
+    dataset = dict()
+    category = Category.objects.all()
+    return render(request, 'add_score.html', dataset)
